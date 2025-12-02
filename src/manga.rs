@@ -10,7 +10,7 @@ use crate::{
     structs::{
         character::CharacterRole,
         forum::{ForumTopic, NewsItem},
-        manga::{Manga, MangaRelation, MangaStatistics, MoreInfo},
+        manga::{Manga, MangaFull, MangaRelation, MangaStatistics, MoreInfo},
         recommendation::RecommendationAlt,
         reviews::Review,
         users::UserUpdate,
@@ -46,7 +46,7 @@ impl JikanClient {
         self.get(&format!("/manga/{}", id)).await
     }
 
-    pub async fn get_manga_full(&self, id: u32) -> Result<Response<Manga>, JikanError> {
+    pub async fn get_manga_full(&self, id: u32) -> Result<Response<MangaFull>, JikanError> {
         self.get(&format!("/manga/{}/full", id)).await
     }
 

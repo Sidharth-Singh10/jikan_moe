@@ -1,7 +1,7 @@
 use crate::{
     common::utils::ExternalEntry,
     response::MalCommonTypeResponse,
-    utils::{DateRange, Images, Score, Title},
+    utils::{DateRange, Images, Score, Title, ExternalEntry},
 };
 use serde::{Deserialize, Serialize};
 
@@ -46,46 +46,14 @@ pub struct MangaExtended {
     pub favorites: Option<u32>,
     pub synopsis: Option<String>,
     pub background: Option<String>,
-    pub authors: Vec<MalCommonTypeResponse>,
-    pub serializations: Vec<MalCommonTypeResponse>,
-    pub genres: Vec<MalCommonTypeResponse>,
-    pub explicit_genres: Vec<MalCommonTypeResponse>,
-    pub themes: Vec<MalCommonTypeResponse>,
-    pub demographics: Vec<MalCommonTypeResponse>,
-}
-
-#[derive(Debug, Clone, Serialize, Deserialize)]
-pub struct MangaFull {
-    pub mal_id: u32,
-    pub url: String,
-    pub images: Images,
-    pub approved: bool,
-    pub titles: Vec<Title>,
-    pub title: String,
-    pub title_english: Option<String>,
-    pub title_japanese: Option<String>,
-    pub r#type: Option<String>,
-    pub chapters: Option<u32>,
-    pub volumes: Option<u32>,
-    pub status: Option<String>,
-    pub publishing: bool,
-    pub published: DateRange,
-    pub score: Option<f32>,
-    pub scored_by: Option<u32>,
-    pub rank: Option<u32>,
-    pub popularity: Option<u32>,
-    pub members: Option<u32>,
-    pub favorites: Option<u32>,
-    pub synopsis: Option<String>,
-    pub background: Option<String>,
-    pub authors: Vec<MalCommonTypeResponse>,
-    pub serializations: Vec<MalCommonTypeResponse>,
-    pub genres: Vec<MalCommonTypeResponse>,
-    pub explicit_genres: Vec<MalCommonTypeResponse>,
-    pub themes: Vec<MalCommonTypeResponse>,
-    pub demographics: Vec<MalCommonTypeResponse>,
-    pub relations: Option<Vec<MangaRelation>>,
+    pub relations: Option<Vec<MangaRelation>>,     
     pub external: Option<Vec<ExternalEntry>>,
+    pub authors: Vec<MalCommonTypeResponse>,
+    pub serializations: Vec<MalCommonTypeResponse>,
+    pub genres: Vec<MalCommonTypeResponse>,
+    pub explicit_genres: Vec<MalCommonTypeResponse>,
+    pub themes: Vec<MalCommonTypeResponse>,
+    pub demographics: Vec<MalCommonTypeResponse>,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]

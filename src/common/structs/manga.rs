@@ -1,7 +1,7 @@
 use crate::{
     common::utils::ExternalEntry,
     response::MalCommonTypeResponse,
-    utils::{DateRange, Images, Score, Title, ExternalEntry},
+    utils::{DateRange, Images, Score, Title},
 };
 use serde::{Deserialize, Serialize};
 
@@ -46,7 +46,7 @@ pub struct MangaExtended {
     pub favorites: Option<u32>,
     pub synopsis: Option<String>,
     pub background: Option<String>,
-    pub relations: Option<Vec<MangaRelation>>,     
+    pub relations: Option<Vec<MangaRelation>>,
     pub external: Option<Vec<ExternalEntry>>,
     pub authors: Vec<MalCommonTypeResponse>,
     pub serializations: Vec<MalCommonTypeResponse>,

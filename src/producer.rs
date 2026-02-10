@@ -40,11 +40,10 @@ impl JikanClient {
         if let Some(lim) = limit {
             params.push(format!("limit={}", lim));
         }
-        if let Some(q) = query {
-            if !q.is_empty() {
+        if let Some(q) = query
+            && !q.is_empty() {
                 params.push(format!("q={}", q));
             }
-        }
         if let Some(o) = order_by {
             params.push(format!("order_by={}", o.as_str()));
         }

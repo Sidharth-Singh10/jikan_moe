@@ -26,11 +26,10 @@ impl JikanClient {
             params.push(format!("sfw={}", s));
         }
 
-        if let Some(u) = unapproved {
-            if u {
+        if let Some(u) = unapproved
+            && u {
                 params.push("unapproved".to_string());
             }
-        }
 
         if let Some(p) = page {
             params.push(format!("page={}", p));

@@ -109,11 +109,10 @@ impl JikanClient {
         let mut query_params = Vec::new();
 
         if let Some(p) = params {
-            if let Some(u) = p.unapproved {
-                if u {
+            if let Some(u) = p.unapproved
+                && u {
                     query_params.push("unapproved".to_string());
                 }
-            }
 
             if let Some(p) = p.page {
                 query_params.push(format!("page={}", p));
@@ -127,17 +126,15 @@ impl JikanClient {
                 query_params.push(format!("filter={}", f.as_str()));
             }
 
-            if let Some(s) = p.sfw {
-                if s {
+            if let Some(s) = p.sfw
+                && s {
                     query_params.push("sfw".to_string());
                 }
-            }
 
-            if let Some(c) = p.continuing {
-                if c {
+            if let Some(c) = p.continuing
+                && c {
                     query_params.push("continuing".to_string());
                 }
-            }
         }
 
         // let query = params.map(|p| p.to_query_params()).unwrap_or_default();
@@ -155,11 +152,10 @@ impl JikanClient {
         let mut query_params = Vec::new();
 
         if let Some(p) = params {
-            if let Some(u) = p.unapproved {
-                if u {
+            if let Some(u) = p.unapproved
+                && u {
                     query_params.push("unapproved".to_string());
                 }
-            }
 
             if let Some(p) = p.page {
                 query_params.push(format!("page={}", p));
@@ -173,17 +169,15 @@ impl JikanClient {
                 query_params.push(format!("filter={}", f.as_str()));
             }
 
-            if let Some(s) = p.sfw {
-                if s {
+            if let Some(s) = p.sfw
+                && s {
                     query_params.push("sfw".to_string());
                 }
-            }
 
-            if let Some(c) = p.continuing {
-                if c {
+            if let Some(c) = p.continuing
+                && c {
                     query_params.push("continuing".to_string());
                 }
-            }
         }
 
         let query = format!("?{}", query_params.join("&"));
@@ -204,11 +198,10 @@ impl JikanClient {
         let mut query_params = Vec::new();
 
         if let Some(p) = params {
-            if let Some(u) = p.unapproved {
-                if u {
+            if let Some(u) = p.unapproved
+                && u {
                     query_params.push("unapproved".to_string());
                 }
-            }
 
             if let Some(p) = p.page {
                 query_params.push(format!("page={}", p));
@@ -222,17 +215,15 @@ impl JikanClient {
                 query_params.push(format!("filter={}", f.as_str()));
             }
 
-            if let Some(s) = p.sfw {
-                if s {
+            if let Some(s) = p.sfw
+                && s {
                     query_params.push("sfw".to_string());
                 }
-            }
 
-            if let Some(c) = p.continuing {
-                if c {
+            if let Some(c) = p.continuing
+                && c {
                     query_params.push("continuing".to_string());
                 }
-            }
         }
 
         let query = format!("?{}", query_params.join("&"));

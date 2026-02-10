@@ -177,11 +177,10 @@ impl JikanClient {
                 query_params.push(format!("q={}", formatted_q));
             }
 
-            if let Some(u) = p.unapproved {
-                if u {
+            if let Some(u) = p.unapproved
+                && u {
                     query_params.push("unapproved".to_string());
                 }
-            }
 
             if let Some(p) = p.page {
                 query_params.push(format!("page={}", p));
